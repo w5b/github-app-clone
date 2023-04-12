@@ -42,6 +42,7 @@ export default function App() {
               <Text style={[styles.header]}>Home</Text>
               <View
                 style={{
+                  flex: 1,
                   width: "100%",
                   marginTop: 5,
                   flexDirection: "row",
