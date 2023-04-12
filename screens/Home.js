@@ -12,6 +12,14 @@ import {
 } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
+import Animated, {
+  RollInRight,
+  RollOutLeft,
+  SlideInDown,
+  SlideInLeft,
+  useAnimatedStyle,
+} from "react-native-reanimated";
+
 export default function Home({ navigation }) {
   let works = [
     { title: "Issues", Image: "" },
@@ -93,21 +101,7 @@ export default function Home({ navigation }) {
                   let drawLine = true;
                   if (index === works.length - 1) drawLine = false;
                   return (
-                    <View
-                      key={index}
-                      style={[
-                        styles.item_wrapper,
-                        { borderBottomWidth: drawLine ? 1 : 0 },
-                      ]}
-                    >
-                      <Text style={styles.item}>{work.title}</Text>
-                      <Ionicons
-                        style={{ marginRight: 5 }}
-                        color="gray"
-                        size={20}
-                        name="chevron-forward"
-                      ></Ionicons>
-                    </View>
+                    <SlideInWork drawLine={drawLine} work={work} key={index} />
                   );
                 })}
               </View>
@@ -173,6 +167,23 @@ export default function Home({ navigation }) {
     </View>
   );
 }
+
+const SlideInWork = ({ drawLine, work }) => {
+  return (
+    <Animated.View
+      entering={SlideInLeft.duration(500)}
+      style={[styles.item_wrapper, { borderBottomWidth: drawLine ? 1 : 0 }]}
+    >
+      <Text style={styles.item}>{work.title}</Text>
+      <Ionicons
+        style={{ marginRight: 5 }}
+        color="gray"
+        size={20}
+        name="chevron-forward"
+      ></Ionicons>
+    </Animated.View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {

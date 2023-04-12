@@ -34,12 +34,13 @@ export default function App() {
             return iconName !== "telescope" ? (
               <Ionicons name={iconName} size={size} color={color}></Ionicons>
             ) : (
-              <Octicons name="telescope" size={22} color={color} />
+              <Octicons name="telescope" size={size} color={color} />
             );
           },
           activeTintColor: "#007bff",
           inactiveTintColor: "#8e8e8e",
           tabBarStyle: {
+            height: "10%",
             backgroundColor: "rgba(44,44,47,255)",
             borderTopWidth: 0,
             borderTopColor: "#8e8e8e",
