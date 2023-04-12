@@ -225,7 +225,7 @@ const styles = StyleSheet.create({
   },
 
   header_medium: {
-    fontWeight: "bold",
+    fontWeight: "600",
     color: "white",
     fontSize: 22,
     textAlign: "center",
