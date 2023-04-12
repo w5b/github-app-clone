@@ -29,11 +29,7 @@ export default function App() {
           marginTop: 100,
         }}
       >
-        <ScrollView
-          contentContainerStyle={{
-            flex: 1,
-          }}
-        >
+        <ScrollView contentContainerStyle={{}}>
           <View
             style={{
               alignItems: "flex-start",
@@ -48,8 +44,8 @@ export default function App() {
                 marginTop: 5,
                 flexDirection: "row",
                 backgroundColor: "#202022",
-                borderRadius: 10,
-                paddingVertical: 10,
+                borderRadius: 8,
+                paddingVertical: 5,
                 alignItems: "center",
               }}
             >
@@ -65,6 +61,8 @@ export default function App() {
                   fontSize: 17,
                   fontWeight: "400",
                   color: "white",
+                  width: "90%",
+                  height: "100%",
                 }}
                 placeholder="Search GitHub"
                 placeholderTextColor={"#97979e"}
@@ -120,14 +118,7 @@ export default function App() {
                 name="ellipsis-horizontal"
               ></Ionicons>
             </View>
-            <View
-              style={{
-                flex: 1,
-                backgroundColor: "#17181b",
-                borderRadius: 10,
-                justifyContent: "center",
-              }}
-            >
+            <View style={styles.area_item}>
               <View
                 style={{ flex: 1, justifyContent: "center", marginBottom: 10 }}
               >
@@ -135,21 +126,8 @@ export default function App() {
                   add favorite repositories here to have quick access at any
                   time, without having to search
                 </Text>
-                <Pressable
-                  style={{
-                    backgroundColor: "#2e2f36",
-                    borderRadius: 6,
-                    marginHorizontal: 20,
-                  }}
-                >
-                  <Text
-                    style={[
-                      styles.item,
-                      { color: "#4b8df7", fontWeight: "500", fontSize: 17 },
-                    ]}
-                  >
-                    Add Favorites
-                  </Text>
+                <Pressable style={styles.button}>
+                  <Text style={[styles.button_text]}>Add Favorites</Text>
                 </Pressable>
               </View>
             </View>
@@ -157,6 +135,28 @@ export default function App() {
           <View style={styles.shortcuts_container}>
             <View style={styles.shortcuts_wrapper}>
               <Text style={styles.header_medium}>Shortcuts</Text>
+            </View>
+            <View style={styles.area_item}>
+              <Text
+                style={[
+                  styles.item,
+                  { fontSize: 17, fontWeight: "500", margin: 5 },
+                ]}
+              >
+                The things you need, one tap away
+              </Text>
+              <Text
+                style={[
+                  styles.item,
+                  { color: "#bfc1c8", fontSize: 17, margin: 5 },
+                ]}
+              >
+                Fast access to your lists of Issues, Pull Requests, or
+                Discussions
+              </Text>
+              <Pressable style={[styles.button, { marginTop: 5 }]}>
+                <Text style={[styles.button_text]}>Get Started</Text>
+              </Pressable>
             </View>
           </View>
         </ScrollView>
@@ -191,11 +191,18 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     height: 210,
   },
+
   favorites_wrapper: {
     marginBottom: 10,
     flexDirection: "row",
     alignItems: "flex-start",
     justifyContent: "space-between",
+  },
+
+  shortcuts_container: {
+    marginHorizontal: 10,
+    marginBottom: 20,
+    height: 210,
   },
 
   shortcuts_wrapper: {
@@ -236,5 +243,26 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 35,
     textAlign: "center",
+  },
+
+  button: {
+    backgroundColor: "#2e2f36",
+    borderRadius: 6,
+    marginHorizontal: 20,
+  },
+
+  button_text: {
+    color: "#4b8df7",
+    fontWeight: "500",
+    fontSize: 17,
+    textAlign: "center",
+    margin: 15,
+  },
+
+  area_item: {
+    flex: 1,
+    backgroundColor: "#17181b",
+    borderRadius: 10,
+    justifyContent: "center",
   },
 });
