@@ -1,5 +1,14 @@
 import React from "react";
-import { StyleSheet, Text, View, SafeAreaView, ScrollView } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  ScrollView,
+  Button,
+  TouchableOpacity,
+  Pressable,
+} from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
 export default function App() {
@@ -34,7 +43,7 @@ export default function App() {
             <Text style={styles.header}>Home</Text>
           </View>
 
-          <View style={styles.item_container}>
+          <View style={styles.work_container}>
             <View style={styles.work_wrapper}>
               <Text style={styles.header_medium}>My Work</Text>
               <Ionicons
@@ -73,7 +82,7 @@ export default function App() {
               })}
             </View>
           </View>
-          <View style={styles.item_container}>
+          <View style={styles.favorites_container}>
             <View style={styles.favorites_wrapper}>
               <Text style={styles.header_medium}>Favorites</Text>
               <Ionicons
@@ -82,8 +91,41 @@ export default function App() {
                 name="ellipsis-horizontal"
               ></Ionicons>
             </View>
+            <View
+              style={{
+                flex: 1,
+                backgroundColor: "#17181b",
+                borderRadius: 10,
+                justifyContent: "center",
+              }}
+            >
+              <View
+                style={{ flex: 1, justifyContent: "center", marginBottom: 10 }}
+              >
+                <Text style={[styles.item]}>
+                  add favorite repositories here to have quick access at any
+                  time, without having to search
+                </Text>
+                <Pressable
+                  style={{
+                    backgroundColor: "#2e2f36",
+                    borderRadius: 6,
+                    marginHorizontal: 20,
+                  }}
+                >
+                  <Text
+                    style={[
+                      styles.item,
+                      { color: "#4b8df7", fontWeight: "500", fontSize: 17 },
+                    ]}
+                  >
+                    Add Favorites
+                  </Text>
+                </Pressable>
+              </View>
+            </View>
           </View>
-          <View style={styles.item_container}>
+          <View style={styles.shortcuts_container}>
             <View style={styles.shortcuts_wrapper}>
               <Text style={styles.header_medium}>Shortcuts</Text>
             </View>
@@ -102,7 +144,7 @@ const styles = StyleSheet.create({
     margin: 0,
   },
 
-  item_container: {
+  work_container: {
     marginHorizontal: 10,
     marginBottom: 20,
     height: 360,
@@ -115,6 +157,11 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
 
+  favorites_container: {
+    marginHorizontal: 10,
+    marginBottom: 20,
+    height: 210,
+  },
   favorites_wrapper: {
     marginBottom: 10,
     flexDirection: "row",
