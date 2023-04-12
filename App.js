@@ -189,7 +189,7 @@ const styles = StyleSheet.create({
   work_wrapper: {
     marginBottom: 10,
     flexDirection: "row",
-    alignItems: "flex-start",
+    alignItems: "center",
     justifyContent: "space-between",
   },
 
@@ -202,7 +202,7 @@ const styles = StyleSheet.create({
   favorites_wrapper: {
     marginBottom: 10,
     flexDirection: "row",
-    alignItems: "flex-start",
+    alignItems: "center",
     justifyContent: "space-between",
   },
 
@@ -215,7 +215,7 @@ const styles = StyleSheet.create({
   shortcuts_wrapper: {
     marginBottom: 10,
     flexDirection: "row",
-    alignItems: "flex-start",
+    alignItems: "center",
     justifyContent: "space-between",
   },
 
