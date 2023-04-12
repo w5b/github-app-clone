@@ -34,7 +34,7 @@ export default function App() {
             style={{
               alignItems: "flex-start",
               marginHorizontal: 10,
-              marginBottom: 30,
+              marginBottom: 22,
             }}
           >
             <Text style={[styles.header]}>Home</Text>
@@ -109,7 +109,7 @@ export default function App() {
               })}
             </View>
           </View>
-          <View style={styles.favorites_container}>
+          <View style={[styles.favorites_container, { marginTop: 25 }]}>
             <View style={styles.favorites_wrapper}>
               <Text style={styles.header_medium}>Favorites</Text>
               <Ionicons
@@ -118,11 +118,11 @@ export default function App() {
                 name="ellipsis-horizontal"
               ></Ionicons>
             </View>
-            <View style={styles.area_item}>
+            <View style={[styles.area_item, { marginTop: 2 }]}>
               <View
                 style={{ flex: 1, justifyContent: "center", marginBottom: 10 }}
               >
-                <Text style={[styles.item]}>
+                <Text style={[styles.item, { marginTop: 20 }]}>
                   add favorite repositories here to have quick access at any
                   time, without having to search
                 </Text>
@@ -157,7 +157,7 @@ export default function App() {
                 ]}
               >
                 Fast access to your lists of Issues, Pull Requests, or
-                Discussions
+                Discussions.
               </Text>
               <Pressable style={[styles.button, { marginTop: 5 }]}>
                 <Text style={[styles.button_text]}>Get Started</Text>
@@ -233,6 +233,7 @@ const styles = StyleSheet.create({
     borderBottomColor: "#252629",
     flexDirection: "row",
     alignItems: "center",
+    padding: 2,
     justifyContent: "space-between",
   },
 
