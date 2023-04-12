@@ -135,6 +135,11 @@ export default function App() {
           <View style={styles.shortcuts_container}>
             <View style={styles.shortcuts_wrapper}>
               <Text style={styles.header_medium}>Shortcuts</Text>
+              <Ionicons
+                color="gray"
+                size={24}
+                name="ellipsis-horizontal"
+              ></Ionicons>
             </View>
             <View style={styles.area_item}>
               <Text
