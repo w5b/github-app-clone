@@ -26,12 +26,12 @@ export default function App() {
       <SafeAreaView style={{ flex: 1 }}>
         <ScrollView
           style={{
-            flex: 1,
             paddingHorizontal: 20,
             paddingVertical: 20,
+            height: "100%",
           }}
         >
-          <View style={{ flex: 1, justifyContent: "space-between" }}>
+          <View style={{ justifyContent: "center" }}>
             <View
               style={{
                 alignItems: "flex-start",
@@ -121,7 +121,7 @@ export default function App() {
                 ></Ionicons>
               </View>
               <View style={[styles.area_item, { marginTop: 2 }]}>
-                <View style={{ flex: 1, justifyContent: "center" }}>
+                <View style={{ flex: 1, justifyContent: "flex-start" }}>
                   <Text style={[styles.item, { marginTop: 20 }]}>
                     add favorite repositories here to have quick access at any
                     time, without having to search
@@ -141,11 +141,11 @@ export default function App() {
                   name="ellipsis-horizontal"
                 ></Ionicons>
               </View>
-              <View style={styles.area_item}>
+              <View style={[styles.area_item]}>
                 <Text
                   style={[
                     styles.item,
-                    { fontSize: 17, fontWeight: "500", margin: 5 },
+                    { fontSize: 17, fontWeight: "500", margin: 10 },
                   ]}
                 >
                   The things you need, one tap away
@@ -159,7 +159,9 @@ export default function App() {
                   Fast access to your lists of Issues, Pull Requests, or
                   Discussions.
                 </Text>
-                <Pressable style={[styles.button, { marginTop: 5 }]}>
+                <Pressable
+                  style={[styles.button, { marginTop: 5, width: "90%" }]}
+                >
                   <Text style={[styles.button_text]}>Get Started</Text>
                 </Pressable>
               </View>
@@ -192,10 +194,8 @@ const styles = StyleSheet.create({
 
   favorites_container: {
     flex: 1,
-
     marginHorizontal: 10,
-    marginBottom: 20,
-    height: "30%",
+    marginBottom: 60,
   },
 
   favorites_wrapper: {
@@ -208,7 +208,7 @@ const styles = StyleSheet.create({
   shortcuts_container: {
     flex: 1,
     marginHorizontal: 10,
-    marginBottom: 20,
+    marginBottom: 60,
   },
 
   shortcuts_wrapper: {
@@ -267,9 +267,10 @@ const styles = StyleSheet.create({
   },
 
   area_item: {
-    flex: 1,
     backgroundColor: "#17181b",
     borderRadius: 10,
-    justifyContent: "center",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    paddingVertical: 15,
   },
 });
