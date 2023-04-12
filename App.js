@@ -76,6 +76,11 @@ export default function App() {
           <View style={styles.item_container}>
             <View style={styles.favorites_wrapper}>
               <Text style={styles.header_medium}>Favorites</Text>
+              <Ionicons
+                color="gray"
+                size={24}
+                name="ellipsis-horizontal"
+              ></Ionicons>
             </View>
           </View>
           <View style={styles.item_container}>
@@ -111,15 +116,17 @@ const styles = StyleSheet.create({
   },
 
   favorites_wrapper: {
-    flex: 1,
+    marginBottom: 10,
+    flexDirection: "row",
     alignItems: "flex-start",
-    justifyContent: "flex-start",
+    justifyContent: "space-between",
   },
 
   shortcuts_wrapper: {
-    flex: 1,
+    marginBottom: 10,
+    flexDirection: "row",
     alignItems: "flex-start",
-    justifyContent: "flex-start",
+    justifyContent: "space-between",
   },
 
   item: {
