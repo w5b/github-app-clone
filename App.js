@@ -2,6 +2,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { Octicons, MaterialCommunityIcons } from "@expo/vector-icons";
 
 const Tab = createBottomTabNavigator();
 
@@ -26,12 +27,14 @@ export default function App() {
             } else if (routeName === "Notifications") {
               iconName = focused ? "notifications" : "notifications-outline";
             } else if (routeName === "Explore") {
-              iconName = focused ? "telescope-outline" : "telescope-outline";
+              iconName = "telescope";
             } else if (routeName === "Profile") {
               iconName = focused ? "person" : "person-outline";
             }
-            return (
+            return iconName !== "telescope" ? (
               <Ionicons name={iconName} size={size} color={color}></Ionicons>
+            ) : (
+              <Octicons name="telescope" size={22} color={color} />
             );
           },
           activeTintColor: "#007bff",
