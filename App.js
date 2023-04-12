@@ -8,6 +8,7 @@ import {
   Button,
   TouchableOpacity,
   Pressable,
+  TextInput,
 } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
@@ -35,15 +36,43 @@ export default function App() {
         >
           <View
             style={{
-              flex: 1,
               alignItems: "flex-start",
               marginHorizontal: 10,
+              marginBottom: 30,
             }}
           >
-            <Text style={styles.header}>Home</Text>
+            <Text style={[styles.header]}>Home</Text>
+            <View
+              style={{
+                width: "100%",
+                marginTop: 5,
+                flexDirection: "row",
+                backgroundColor: "#202022",
+                borderRadius: 10,
+                paddingVertical: 10,
+                alignItems: "center",
+              }}
+            >
+              <Ionicons
+                style={{ marginLeft: 10, marginRight: 2 }}
+                color="#8f8f95"
+                size={25}
+                name="search-outline"
+              ></Ionicons>
+              <TextInput
+                style={{
+                  backgroundColor: "#202022",
+                  fontSize: 17,
+                  fontWeight: "400",
+                  color: "white",
+                }}
+                placeholder="Search GitHub"
+                placeholderTextColor={"#97979e"}
+              ></TextInput>
+            </View>
           </View>
 
-          <View style={styles.work_container}>
+          <View style={[styles.work_container]}>
             <View style={styles.work_wrapper}>
               <Text style={styles.header_medium}>My Work</Text>
               <Ionicons
